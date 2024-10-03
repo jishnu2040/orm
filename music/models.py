@@ -17,3 +17,13 @@ class Song(models.Model):
 
     def __str__(self):
         return self.name
+
+class Book(models.Model):
+   name = models.CharField(max_length=300)
+   pages = models.IntegerField()
+   price = models.DecimalField(max_digits=10, decimal_places=2)
+
+class Bookdata(models.Model):
+     book = models.ForeignKey(Book,on_delete=models.CASCADE)    #connect the field book with the model Book using the foreign key
+     chapter_name = models.CharField(max_length=500)
+
