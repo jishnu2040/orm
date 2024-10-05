@@ -26,4 +26,5 @@ class Book(models.Model):
 class Bookdata(models.Model):
      book = models.ForeignKey(Book,on_delete=models.CASCADE)    #connect the field book with the model Book using the foreign key
      chapter_name = models.CharField(max_length=500)
+     
 
